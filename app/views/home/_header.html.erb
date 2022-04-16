@@ -1,32 +1,22 @@
 <nav class="navbar navbar-expand-lg" style="background-color: #e3f2fd;">
   <div class="container-fluid">
-    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
+    <ul class="nav justify-content-end">
+        <li class="btn btn-outline-primary" >
           <%= link_to "Hosting", root_path, class:"nav-link" %> 
         </li>
-        <li class="nav-item">
+        <li class="btn btn-outline-primary">
           <%= link_to "VPS/VDS", home_vpsvds_path, class:"nav-link" %>
         </li>
-        <li class="nav-item">
+        <li class="btn btn-outline-primary">
           <%= link_to "Dedicated", home_dedicated_path, class:"nav-link" %>
         </li>
-        <li class="nav-item">
+        <li class="btn btn-outline-primary">
           <%= link_to "Domens", home_domens_path, class:"nav-link" %>
         </li>
-        <li class="nav-item dropdown">
+        <li class="btn btn-outline-primary dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Услуги
           </a>
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li>
             <a class="dropdown-item" href="#">Создвть Сайт</a>
@@ -38,9 +28,23 @@
             <li><a class="dropdown-item" href="#">БЕСПЛАТНЫЙ ХОСТИНГ</a></li>
           </ul>
         </li>
-        <ul class="nav navbar-nav pull-right">
-      <li><% link_to 'Home', root_path %></li>
-      <ul class="nav navbar-nav pull-right">
+        <li class="btn btn-outline-primary dropdown">
+          <a class="nav-item dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+            INFO
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="#">Новости</a></li>
+            <li><a class="dropdown-item" href="#">Инструкции</a></li>
+            <li><a class="dropdown-item" href="#">Документы</a></li>
+            <li><a class="dropdown-item" href="#">Статьи</a></li>
+            <li><a class="dropdown-item" href="#">Продажа Оборудования</a></li>
+            <li><a class="dropdown-item" href="#">PORTFOLIO</a></li>
+            <li><a class="dropdown-item" href="#">Все Наши Сервисы</a></li>
+            <li><a class="dropdown-item" href="#">Все Наши Услуги</a></li>
+            <li><a class="dropdown-item" href="#">Контакты</a></li>
+          </ul>
+        </li>
+      <ul class="nav justify-content-end">
         <% if user_signed_in? %>
         <li><%= current_user.email %></li>
         <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
@@ -48,5 +52,8 @@
           <li><%= link_to 'Log In', new_user_session_path %></li>
           <li><%= link_to 'Sign Up', new_user_registration_path %></li>
         <% end %>
+      </ul>
+    </ul>
+  </ul>
   </div>
 </nav>
